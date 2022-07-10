@@ -1,3 +1,6 @@
+# Project Euler - 67
+# Date: 31/05/2022
+
 with open('lib\\001-100\\peuler_resource067.txt','r') as triangle:
     rows = []
     for row in triangle:
