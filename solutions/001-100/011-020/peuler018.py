@@ -10,7 +10,6 @@ for i in range(len(rows)):
 
 def find_max_path(triangle):
     for i in range(len(triangle)-2,-1,-1):
-        print(i)
         for j in range(len(triangle[i])-(14-i)):
             triangle[i][j]+=max(triangle[i+1][j], triangle[i+1][j+1])
     return triangle[0][0]
