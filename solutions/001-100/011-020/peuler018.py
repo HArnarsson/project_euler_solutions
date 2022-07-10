@@ -1,4 +1,4 @@
-with open('peuler_resource018.txt','r') as triangle:
+with open('lib\\001-100\\peuler_resource018.txt','r') as triangle:
     rows = []
     for row in triangle:
         rows.append(row)
