@@ -13,7 +13,7 @@ def SieveOfEratosthenes(num):
                 prime[i] = False
         p += 1
     for p in range(2, num+1):
-        if prime[p] and (p%3==1 or p==3):
+        if prime[p]:
             yield p
 
 primes = list(SieveOfEratosthenes(10000))
