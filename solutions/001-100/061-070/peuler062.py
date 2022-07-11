@@ -3,7 +3,6 @@
 
 from itertools import permutations
 import collections
-from operator import is_
 
 def gen_cubes(limit):
     a=1
