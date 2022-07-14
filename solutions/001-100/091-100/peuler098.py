@@ -6,7 +6,7 @@
 from collections import Counter
 from math import sqrt
 
-with open("C:\\Temp\\working_directory\\peuler_resource098.txt",'r') as file:
+with open("lib\\001-100\\peuler_resource098.txt",'r') as file:
     for row in file:
         string = str(row)
 words = string.split(',')
