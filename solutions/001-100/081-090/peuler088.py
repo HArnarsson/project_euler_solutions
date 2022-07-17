@@ -1,7 +1,7 @@
-from collections import Counter
-from itertools import permutations
-from math import ceil,inf, log2,sqrt,prod
-from time import time
+# Project Euler - 88
+# Date: 17/07/2022
+
+from math import ceil,inf, log2,prod
 
 def get_factorization(x, spf):
     ret = list()
