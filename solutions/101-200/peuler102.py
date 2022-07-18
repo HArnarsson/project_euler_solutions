@@ -32,7 +32,7 @@ def is_O_in_triangle(triangle):
 if __name__ == "__main__":
     triangles = []
 
-    with open("C:\\Temp\\working_directory\\peuler_resource102.txt","r") as file:
+    with open("lib\\101-200\\peuler_resource102.txt","r") as file:
         for row in file:
             triangles.append(row[:-1].split(','))
 
