@@ -31,7 +31,7 @@ def condition1(cand):
     return True
 
 candidates = []
-with open("C:\\Temp\\working_directory\\peuler_resource105.txt") as file:
+with open("lib\\101-200\\peuler_resource105.txt") as file:
     for row in file:
         candidates.append(row[:-1].split(','))
 
