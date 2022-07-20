@@ -1,34 +1,31 @@
-from itertools import combinations
+from itertools import combinations, chain
 from time import time
 og = [20,31,38,39,40,42,45]
 
-def print_max_and_min_sets(cand):
-    if len(cand)%2 == 0:
-        max_min = len(cand)//2
-        for i in range(max_min,1,-1):
-            if(sum(cand[:i]) > sum(cand[-(i-1):])):
-                continue
-            else:
-                return False
-        return True
-    elif len(cand)%2 != 0:
-        max_min = len(cand)//2+1
-        for i in range(max_min,1,-1):
-            if(sum(cand[:i]) > sum(cand[-(i-1):])):
-                continue
-            else:
-                return False
+def powerset(iterable):
+    "powerset([1,2,3]) --> () (1,) (2,) (3,) (1,2) (1,3) (2,3) (1,2,3)"
+    s = list(iterable)
+    return chain.from_iterable(combinations(s, r) for r in range(1,len(s)+1))
 
-print_max_and_min_sets(og)
-def has_same_sum(cand:list):
-    for length in range(2,7):
-        for comb in list(combinations(cand,length)):
-            temp = [cand[i] for i in range(len(cand)) if cand[i] not in comb]
-            for r in range(1,len(temp)+1):
-                for subcomb in list(combinations(temp,r)):
-                    if sum(subcomb) == sum(comb):
-                        return True
-    return False
+def condition2(cand):
+    sum1 = cand[0]
+    sum2 = 0
+    for i in range(len(cand)//2):
+        sum1+=cand[i+1]
+        sum2+=cand[len(cand)-i-1]
+        if sum1<=sum2:
+            return False
+    return True
+
+def condition1(cand):
+    all_subsets = powerset(cand)
+    for sub in all_subsets:
+        summ = sum(sub)
+        for sub2 in powerset(set(cand)-set(sub)):
+            if sum(sub2) == summ:
+                print(sub,sub2)
+                return False
+    return True
 
 # Brute Force method
 
@@ -40,7 +37,7 @@ for r in range(1,5):
 
 print(candidates)
 for cand in candidates:
-    if has_same_sum(cand) and print_max_and_min_sets(cand):
+    if condition1(cand) and condition2(cand):
         print(cand)
         
 # Here nothing was printed, so I tested the "og" solution and it turns out the "near-optimum" algorithm was optimal in this case. ans: 20313839404245
