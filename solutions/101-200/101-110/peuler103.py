@@ -1,3 +1,6 @@
+# Project Euler - 103
+# Date: 20/07/2022
+
 from itertools import combinations, chain
 from time import time
 og = [20,31,38,39,40,42,45]
