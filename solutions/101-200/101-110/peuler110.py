@@ -12,11 +12,12 @@ nums = [3,5,7]
 for a in range(1,limit):
     for b in range(0,limit):
         for c in range(0,limit):
-            calc = ceil(1/2*(3**a)*(5**b)*(7**c))
-            if 0 < calc-TARGET < min_dist:
-                best_exponents = [a,b,c]
-                best_num = calc
-                min_dist = calc-TARGET
+            for d in range(0,limit):
+                calc = ceil(1/2*(3**a)*(5**b)*(7**c)*(11**d))
+                if 0 < calc-TARGET < min_dist:
+                    best_exponents = [a,b,c]
+                    best_num = calc
+                    min_dist = calc-TARGET
 
 primes = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61]
 
