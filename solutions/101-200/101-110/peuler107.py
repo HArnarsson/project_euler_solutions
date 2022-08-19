@@ -15,7 +15,7 @@ from math import inf
 
 # Note that the adjacency matrix has duplicate vertex costs
 
-with open("C:\\Users\\Notandi\\p107_network.txt","r") as file:
+with open("lib/100-200/peuler_resource107.txt","r") as file:
     adj_matrix = []
     for row in file:
         adj_matrix.append(row[:-1].split(","))
